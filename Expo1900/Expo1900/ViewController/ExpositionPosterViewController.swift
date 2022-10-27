@@ -6,6 +6,16 @@
 
 import UIKit
 
+class CustomNavigationController: UINavigationController {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        guard let _ = topViewController as? ExpositionPosterViewController else {
+            return .all
+        }
+        
+        return .portrait
+    }
+}
+
 final class ExpositionPosterViewController: UIViewController {
     private var exposition: Exposition?
     
